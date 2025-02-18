@@ -9,12 +9,12 @@ def agregar_cancion():
     data = request.get_json()
     nombre = data.get('nombre')
     artista = data.get('artista')
-    album = data.get('album')
+    genero = data.get('genero')
     
-    if not nombre or not artista or not album:
+    if not nombre or not artista or not genero:
         return jsonify({"error": "Faltan datos"}), 400
     
-    cancion = {"nombre": nombre, "artista": artista, "album": album}
+    cancion = {"nombre": nombre, "artista": artista, "album": genero}
     canciones.append(cancion)
     
     return jsonify(cancion), 201
