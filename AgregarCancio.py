@@ -18,7 +18,9 @@ def agregar_cancion():
     canciones.append(cancion)
     
     return jsonify(cancion), 201
-
+@app.route('/informacion', methods=['GET'])
+def obtener_informacion():
+    return jsonify({"nombre": "Roger Alberto Rivera Alvarez", "carnet": "201800551"}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
